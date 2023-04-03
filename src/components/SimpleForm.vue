@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Create an event</h1>
-    <form>
+    <form @submit.prevent="sendForm">
       <label>Select a category</label>
       <BaseSelect
         :options="categories"
@@ -43,7 +43,7 @@
 
 <script>
 import BaseCheckbox from "./BaseCheckbox.vue";
-
+import axios from "axios";
 export default {
   data() {
     return {
@@ -72,6 +72,23 @@ export default {
         { label: "No", value: 0 },
       ],
     };
+  },
+  methods: {
+    async sendForm() {
+      try {
+        const res = await axios
+          .post(
+            "https://my-json-server.typicode.com/jontatan25/Vue-forms/events",
+            this.event
+          )
+          .then((response) => {
+            console.log(response);
+          });
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 };
 </script>

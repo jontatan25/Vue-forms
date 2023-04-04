@@ -1,4 +1,5 @@
 <template>
+  <LoginForm />
   <div>
     <h1>Create an event</h1>
     <form @submit.prevent="sendForm">
@@ -49,7 +50,7 @@
         </div>
       </fieldset>
 
-      <button type="submit">Submit</button>
+      <BaseButton type="submit" class="-fill-gradient"> Submit </BaseButton>
     </form>
   </div>
 </template>
@@ -57,6 +58,8 @@
 <script>
 import BaseCheckbox from "./BaseCheckbox.vue";
 import axios from "axios";
+import LoginForm from "./LoginForm.vue";
+
 export default {
   data() {
     return {
@@ -102,6 +105,7 @@ export default {
       }
     },
   },
+  components: { LoginForm },
 };
 </script>
 

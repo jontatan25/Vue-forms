@@ -1,9 +1,12 @@
 <script setup>
 import SimpleForm from "./components/SimpleForm.vue";
+import ComponentsForm from "./views/ComponentsForm.vue";
 </script>
 
 <template>
-  <SimpleForm />
+  <!-- <SimpleForm /> -->
+
+  <ComponentsForm />
 </template>
 
 <style>
@@ -138,6 +141,7 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: none;
+  appearance: none;
 }
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -185,6 +189,7 @@ textarea {
 }
 [type="search"] {
   -webkit-appearance: textfield;
+  appearance: none;
   outline-offset: -2px;
 }
 [type="search"]::-webkit-search-decoration {
